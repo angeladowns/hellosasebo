@@ -1,29 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @adventure.name %>
-</p>
+    <div class="row">
+      <div class="col-md-9">
+        <%= image_tag(@adventure.picture_url, width: '100%') if @adventure.picture.present? %>
+      </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @adventure.description %>
-</p>
-
-<p>
-  <strong>Picture:</strong>
-  <%= image_tag(@adventure.picture_url, :width => 600) if @adventure.picture.present? %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @adventure.location %>
-</p>
-
-<p>
-  <strong>Visit:</strong>
-  <%= @adventure.visit %>
-</p>
-
-<%= link_to 'Edit', edit_adventure_path(@adventure) %> |
-<%= link_to 'Back', adventures_path %>
+          <div class="col-md-3">
+        <p><b>Name: </b><%= @adventure.name %></p>
+        <p><b>Description: </b><%= @adventure.description %></p>
+        <p>
+          <%= link_to 'Edit', edit_adventure_path(@adventure) %> |
+          <%= link_to 'Destroy', @adventure, data: { confirm: 'Are you sure?' }, method: :delete %> |
+          <%= link_to 'Back', adventures_path %>
+        </p>
+      </div>
+    </div>
