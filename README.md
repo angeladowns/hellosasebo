@@ -1,24 +1,7 @@
-# README
+# Rails Girls 2017
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Japan Adventures
 
-Things you may want to cover:
+*Made* *by* *Angela* *Downs*
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This Adventure App was created using the Rails Girls LA Guide located at: https://gist.github.com/jendiamond/5a26b531e8e47b4aa638.
