@@ -8,18 +8,17 @@
 
       <div class="col-md-3">
 
-        <h3><%= @adventure.name %></h3>
+        <h2><%= @adventure.name %></h2>
         <p><%= @adventure.description %></p>
-        <p><b>Address: </b><%= @adventure.address %></p>
-        <p><b>Latitude: </b><%= @adventure.latitude %></p>
-        <p><b>Longitude: </b><%= @adventure.longitude %></p>
-
         <p>
           <%= link_to 'Edit', edit_adventure_path(@adventure) %> |
           <%= link_to 'Destroy', @adventure, data: { confirm: 'Are you sure?' }, method: :delete %> |
           <%= link_to 'Back', adventures_path %>
         </p>
-
+<hr>
+        <h3>Have You Been Here?</h3>
+        <p>What did you think? Have any tips?</p>
+        <%= render 'comments/form' %>
       </div>
     </div>
 
@@ -29,8 +28,15 @@
           <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@adventure.latitude}%2C#{@adventure.longitude}" %>
       </div>
 
+      <div class="col-md-3">
+        <h3>How To Get Here</h3>
+        <p><b>Address: </b><%= @adventure.address %></p>
+        <p><b>Latitude: </b><%= @adventure.latitude %></p>
+        <p><b>Longitude: </b><%= @adventure.longitude %></p>
+      </div>
+
       <div class="col-md-4">
-        <h3>Comments</h3>
+        <h3>From Fellow Adventurers</h3>
         <% @comments.each do |comment| %>
           <div>
            <p><%= comment.body %></p>
@@ -39,8 +45,5 @@
           </div>
         <% end %>
       </div>
-      <div class="col-md-3">
-        <h3>Have You Been Here?</h3>
-        <%= render 'comments/form' %>
-      </div>
+
     </div>
