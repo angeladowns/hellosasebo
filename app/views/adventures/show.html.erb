@@ -4,6 +4,15 @@
       <div class="col-md-9">
         <%= image_tag(@adventure.picture_url, width: '100%') if @adventure.picture.present? %>
 
+        <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@adventure.latitude}%2C#{@adventure.longitude}" %>
+
+<h3>Nearby Adventures</h3>
+<ul>
+<% for location in @adventure.nearbys(10) %>
+  <li><%= link_to location.address, location %> (<%= location.distance.round(2) %> miles)</li>
+<% end %>
+</ul>
+
         <h3>Comments</h3>
         <% @comments.each do |comment| %>
           <div>
@@ -17,13 +26,16 @@
 
       </div>
 
-          <div class="col-md-3">
-        <p><b>Name: </b><%= @adventure.name %></p>
-        <p><b>Description: </b><%= @adventure.description %></p>
-        <p>
-          <%= link_to 'Edit', edit_adventure_path(@adventure) %> |
-          <%= link_to 'Destroy', @adventure, data: { confirm: 'Are you sure?' }, method: :delete %> |
-          <%= link_to 'Back', adventures_path %>
+      <div class="col-md-3">
+          <p><b>Name: </b><%= @adventure.name %></p>
+          <p><b>Description: </b><%= @adventure.description %></p>
+          <p><b>Address: </b><%= @adventure.address %></p>
+          <p><b>Latitude: </b><%= @adventure.latitude %></p>
+          <p><b>Longitude: </b><%= @adventure.longitude %></p>
+          <p>
+            <%= link_to 'Edit', edit_adventure_path(@adventure) %> |
+            <%= link_to 'Destroy', @adventure, data: { confirm: 'Are you sure?' }, method: :delete %> |
+            <%= link_to 'Back', adventures_path %>
         </p>
       </div>
     </div>
