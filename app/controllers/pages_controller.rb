@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   else
     @adventures = Adventure.all
   end
-  @hash = Gmaps4rails.build_markers(@adventures) do |adventure, marker|
+    @hash = Gmaps4rails.build_markers(@adventures) do |adventure, marker|
     marker.lat adventure.latitude
     marker.lng adventure.longitude
     marker.infowindow adventure.name
@@ -16,7 +16,6 @@ class PagesController < ApplicationController
       "width" => 32,
       "height" => 32})
     marker.json({ name: adventure.name})
+   end
   end
-end
-
 end

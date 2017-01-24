@@ -18,7 +18,9 @@
    font-family: "Comfortaa", cursive;
 
  }
-
+h2 {
+  font-family: "Comfortaa", cursive;
+}
  table,td,th {
    vertical-align: middle;
    border: none;
@@ -32,4 +34,7 @@
    margin-top: 100px;
    text-align: center;
    color: #999;
+ }
+
+ .field {
  }
