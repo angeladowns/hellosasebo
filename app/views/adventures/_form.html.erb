@@ -13,35 +13,37 @@
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'w3-input w3-border', placeholder: "ex: Good Coffee Labo" %>
   </div>
 
   <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
+    <%= f.label :location, "City" %>
+    <%= f.text_field :location, class: 'w3-input w3-border', placeholder: "ex: Sasebo, Japan" %>
   </div>
 
   <div class="field">
     <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: 'w3-input w3-border' %>
   </div>
 
   <div class="field">
-    <%= f.label :picture %>
+    <%= f.label :picture %><br />
     <%= f.file_field :picture %>
   </div>
 
   <div class="field">
-    <%= f.label :location %>
-    <%= f.text_field :location %>
-  </div>
-
-  <div class="field">
-    <%= f.label :visit %>
+    <%= f.label :visit, "When did you last visit this location?" %><br />
     <%= f.date_select :visit %>
   </div>
 
+<h3>Help others get here.</h3>
+<h6>Enter in the full address. The app will find the map coordinates.</h6>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address, class: 'w3-input w3-border', placeholder: "ex: 1-33, Motomachi, Sasebo, Nagasaki, Japan 857-0059" %>
+  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Share Your Adventure', :class => 'w3-btn w3-red w3-margin-top' %>
   </div>
 <% end %>

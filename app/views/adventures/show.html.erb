@@ -1,5 +1,66 @@
-<p id="notice"><%= notice %></p>
+<div class="w3-content" style="max-width:1100px;">
+  <div class="w3-container w3-margin-top">
+  </div>
 
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <%= image_tag(@adventure.picture_url, width: '100%') if @adventure.picture.present? %>
+      <span class="w3-display-bottomleft w3-padding"><%= @adventure.location %></span>
+    </div>
+  </div>
+
+  <div class="w3-container">
+
+    <div class="w3-row-padding">
+      <div class="w3-half w3-margin-bottom">
+        <h2><%= @adventure.name %></h2>
+        <p><%= @adventure.description %></p>
+        <p>
+          <%= link_to 'Edit', edit_adventure_path(@adventure) %> |
+          <%= link_to 'Destroy', @adventure, data: { confirm: 'Are you sure?' }, method: :delete %>
+        </p>
+        <div class="w3-container w3-white">
+          <h3>Have You Been Here?</h3>
+          <p>What did you think? Was it kid- or pet-friendly? Care to share any tips?</p>
+          <%= render 'comments/form' %>
+          <br />
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-row-padding">
+      <div class="w3-half w3-margin-bottom">
+        <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@adventure.latitude}%2C#{@adventure.longitude}" %>
+        <div class="w3-container w3-white">
+          <h3>Finding Your Way Here</h3>
+          <p><b>Address:</b><br />
+          <%= @adventure.address %></p>
+          <p><b>Latitude and Longitude:</b><br />
+          <%= @adventure.latitude %>, <%= @adventure.longitude %></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div class="col-md-4">
+    <h3>From Fellow Adventurers</h3>
+    <% @comments.each do |comment| %>
+      <div>
+       <p><%= comment.body %></p>
+       <p><em>&mdash;<%= comment.user_name %></em></p>
+       <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+</div>
+
+
+<!-- OLD ADVENTURE
     <div class="row">
 
       <div class="col-md-9">
@@ -47,3 +108,4 @@
       </div>
 
     </div>
+  -->

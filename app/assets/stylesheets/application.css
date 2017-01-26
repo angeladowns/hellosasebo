@@ -14,13 +14,12 @@
  *= require_self
  */
  body {
-   padding-top: 60px;
-   font-family: "Comfortaa", cursive;
+ }
+ p {
+   font-family: 'Comfortaa', serif;
 
  }
-h2 {
-  font-family: "Comfortaa", cursive;
-}
+
  table,td,th {
    vertical-align: middle;
    border: none;
@@ -31,10 +30,11 @@ h2 {
  }
 
  footer {
-   margin-top: 100px;
+   margin-top: 40px;
    text-align: center;
    color: #999;
  }
 
  .field {
+   margin: 20px 0;
  }

@@ -1,15 +1,80 @@
-<p id="notice"><%= notice %></p>
+<%= render "layouts/header" %>
 
-<h1>Adventures</h1>
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px;">
 
-    <% @adventures.in_groups_of(3) do |group| %>
-      <div class="row">
-        <% group.compact.each do |adventure| %>
-          <div class="col-md-4">
-            <%= image_tag adventure.picture_url, width: '100%' if adventure.picture.present?%>
-            <h4><%= link_to adventure.name, adventure %></h4>
-            <%= adventure.description %>
-          </div>
-        <% end %>
+  <!-- Good offers -->
+  <div class="w3-container w3-margin-top">
+    <h3>Where do you want to go today?</h3>
+    <h6>Search by city for things to eat, buy, and see.</h6>
+  </div>
+  <div class="w3-row-padding w3-text-white w3-large">
+    <div class="w3-half w3-margin-bottom">
+      <div class="w3-display-container">
+        <img src="https://s3.amazonaws.com/adv-assets/site-images/stock-pic7.jpg" alt="Sasebo" style="width:100%">
+        <span class="w3-display-bottomleft w3-padding">Sasebo</span>
       </div>
+    </div>
+    <div class="w3-half">
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="https://s3.amazonaws.com/adv-assets/site-images/stock-pic10.jpg" alt="Fukuoka" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">Fukuoka</span>
+          </div>
+        </div>
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="https://s3.amazonaws.com/adv-assets/site-images/stock-pic12.jpg" alt="Nagasaki" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">Nagasaki</span>
+          </div>
+        </div>
+      </div>
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="https://s3.amazonaws.com/adv-assets/site-images/stock-pic3.jpg" alt="Osaka" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">Osaka</span>
+          </div>
+        </div>
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="https://s3.amazonaws.com/adv-assets/site-images/stock-pic1.jpg" alt="Tokyo" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">Tokyo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Explore Nature -->
+    <div class="w3-container">
+      <h3>Today's Faves</h3>
+      <p>These are our favorite places. What's yours?</p>
+    </div>
+    <% @adventures.in_groups_of(2) do |group| %>
+    <div class="w3-row-padding">
+      <% group.compact.each do |adventure| %>
+      <div class="w3-half w3-margin-bottom">
+        <%= image_tag adventure.picture_url, width: '100%' if adventure.picture.present?%>
+        <div class="w3-container w3-white">
+          <h3><%= adventure.name %></h3>
+          <p class="w3-opacity"><%= adventure.location %></p>
+          <p><%= adventure.description %></p>
+          <button class="w3-btn w3-margin-bottom"><%= link_to 'More Info', adventure %></button>
+        </div>
+      </div>
+      <% end %>
+    </div>
     <% end %>
+
+<!-- Newsletter -->
+  <div class="w3-container">
+    <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off">
+      <h2>Get the scoop delivered to your inbox.</h2>
+      <p>Join our newsletter.</p>
+      <label>E-mail</label>
+      <input class="w3-input w3-border" type="text" placeholder="Your Email address">
+      <button type="button" class="w3-btn w3-red w3-margin-top">Subscribe</button>
+    </div>
+  </div>
