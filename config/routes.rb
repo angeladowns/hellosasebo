@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   resources :comments
   get 'pages/info'
+  get 'pages/sasebo'
+  get 'pages/fukuoka'
+  get 'pages/nagasaki'
+  get 'pages/osaka'
+  get 'pages/tokyo'
+
 
   root 'adventures#index'
   resources :adventures

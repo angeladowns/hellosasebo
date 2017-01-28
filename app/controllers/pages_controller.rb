@@ -2,6 +2,8 @@ class PagesController < ApplicationController
   def info
   end
 
+
+
   def map
   if params[:search].present?
     @adventures = Adventure.near(params[:search], 1000, :order => :address)
