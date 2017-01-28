@@ -2,62 +2,89 @@
   <div class="w3-container w3-margin-top">
   </div>
 
-  <div class="w3-container">
-    <div class="w3-display-container">
-      <%= image_tag(@adventure.picture_url, width: '100%') if @adventure.picture.present? %>
-      <span class="w3-display-bottomleft w3-padding"><%= @adventure.location %></span>
-    </div>
-  </div>
-
-  <div class="w3-container">
-
     <div class="w3-row-padding">
-      <div class="w3-half w3-margin-bottom">
+      <div class="w3-twothird">
+        <%= image_tag(@adventure.picture_url, width: '100%') if @adventure.picture.present? %>
+      </div>
+      <div class="w3-third">
         <h2><%= @adventure.name %></h2>
+        <p><%= @adventure.location %></p>
         <p><%= @adventure.description %></p>
         <p>
-          <%= link_to 'Edit', edit_adventure_path(@adventure) %> |
-          <%= link_to 'Destroy', @adventure, data: { confirm: 'Are you sure?' }, method: :delete %>
+          <%= link_to 'Update', edit_adventure_path(@adventure), :class => 'w3-btn w3-red w3-margin-top'  %>
+          <%= link_to 'Delete', @adventure, data: { confirm: 'Are you sure?' }, method: :delete, :class => 'w3-btn w3-red w3-margin-top'  %>
         </p>
-        <div class="w3-container w3-white">
-          <h3>Have You Been Here?</h3>
-          <p>What did you think? Was it kid- or pet-friendly? Care to share any tips?</p>
-          <%= render 'comments/form' %>
-          <br />
-        </div>
       </div>
     </div>
 
-    <div class="w3-row-padding">
-      <div class="w3-half w3-margin-bottom">
-        <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@adventure.latitude}%2C#{@adventure.longitude}" %>
-        <div class="w3-container w3-white">
-          <h3>Finding Your Way Here</h3>
-          <p><b>Address:</b><br />
-          <%= @adventure.address %></p>
-          <p><b>Latitude and Longitude:</b><br />
-          <%= @adventure.latitude %>, <%= @adventure.longitude %></p>
-        </div>
+  <div class="w3-container w3-margin-top">
+    <h2>Be brave. Choose courage.</h2>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <p>Finding your way around a new city (or country!) can be challenging but so rewarding when you finally find that cat cafe you've been searching for. Try not to get discouraged if you make a wrong turn or miss your exit. Everyone likes to be a hero, even Siri, so just ask for help and keep on exploring!<p>
+        <hr>
+        <h3>Tips for Using GPS</h3>
+        <ol>
+          <li>Set your GPS before you leave.</li>
+          <li>Make sure you also set your return destination (home, maybe?).</li>
+          <li>If you're using your smartphone, mount it at eye-level so you aren't looking away from the road.</li>
+          <li>Expect hiccups. Siri gets confused sometimes, just like us.</li>
+        </ol>
+    </div>
+
+    <div class="w3-twothird">
+      <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@adventure.latitude}%2C#{@adventure.longitude}" %>
+      <div class="w3-container w3-white">
+        <h3>Finding Your Way Here</h3>
+        <p><b>Address:</b><br />
+        <%= @adventure.address %></p>
+        <p><b>Latitude and Longitude:</b><br />
+        <%= @adventure.latitude %>, <%= @adventure.longitude %></p>
       </div>
     </div>
+  </div>
+
+  <div class="w3-container w3-margin-top">
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <div class="w3-container w3-white">
+        <h3>Have You Been Here?</h3>
+        <p>What did you think? Was it kid- or pet-friendly? Care to share any tips?</p>
+        <%= render 'comments/form' %>
+        <br />
+      </div>
+    </div>
+
+
+    <% @comments.in_groups_of(2) do |group| %>
+
+    <div class="w3-third">
+      <div class="w3-container w3-white">
+        <% group.compact.each do |comment| %>
+          <div>
+           <p><%= comment.body %></p>
+           <p><em>&mdash;<%= comment.user_name %></em></p>
+           <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+      <% end %>
 
   </div>
 
 
 
-  <div class="col-md-4">
-    <h3>From Fellow Adventurers</h3>
-    <% @comments.each do |comment| %>
-      <div>
-       <p><%= comment.body %></p>
-       <p><em>&mdash;<%= comment.user_name %></em></p>
-       <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
-      </div>
-    <% end %>
+
+
+
   </div>
 
-</div>
-</div>
 
 
 <!-- OLD ADVENTURE
