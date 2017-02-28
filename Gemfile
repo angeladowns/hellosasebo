@@ -22,6 +22,9 @@ gem 'figaro'
 gem 'geocoder'
 gem 'gmaps4rails'
 
+gem 'devise'
+gem 'gravtastic'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

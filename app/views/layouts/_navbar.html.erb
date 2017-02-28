@@ -1,7 +1,18 @@
 <!-- Navigation Bar -->
 <ul class="w3-navbar w3-white w3-border-bottom w3-xlarge">
   <li><a href="/adventures" class="w3-text-red w3-hover-red"><b><i class="fa fa-map-marker w3-margin-right"></i>Japan Adventure App</b></a></li>
-  <li ><%= link_to 'New Adventure', new_adventure_path %></li>
   <li><a href="/pages/info">About</a></li>
   <li class="w3-right"><a href="#" class="w3-hover-red w3-text-grey"><i class="fa fa-search"></i></a></li>
+
+<% if user_signed_in? %>
+  <li ><%= link_to 'New Adventure', new_adventure_path %></li>
+
+  <li class="w3-right"><%= image_tag current_user.gravatar_url,  class:"gravatar_sm" %></li>
+  <li class="w3-right"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+  <li class="w3-right"><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+<% else %>
+  <li class="w3-right"><%= link_to "Login", new_user_session_path %></li>
+  <li class="w3-right"><%= link_to "Sign Up", new_user_registration_path %></li>
+<% end %>
+
 </ul>
