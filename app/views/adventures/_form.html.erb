@@ -1,4 +1,6 @@
 <div class="w3-container">
+  <% if user_signed_in? %>
+
 <%= form_for(adventure) do |f| %>
   <% if adventure.errors.any? %>
     <div id="error_explanation">
@@ -47,5 +49,9 @@
   <div class="actions">
     <%= f.submit 'Share Your Adventure', :class => 'w3-btn w3-red w3-margin-top' %>
   </div>
+<% end %>
+
+<% else %>
+<p>You must <%= link_to "Sign Up", new_user_registration_path %> or <%= link_to "Login", new_user_session_path %> to contribute.</p>
 <% end %>
   </div>
