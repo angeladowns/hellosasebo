@@ -1,5 +1,6 @@
 <div class="w3-container">
-  <% if user_signed_in? %>
+
+<% if user_signed_in? %>
 
 <%= form_for(adventure) do |f| %>
   <% if adventure.errors.any? %>
