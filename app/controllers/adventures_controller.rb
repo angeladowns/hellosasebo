@@ -14,6 +14,8 @@ class AdventuresController < ApplicationController
 
     @comments = @adventure.comments.all
     @comment = @adventure.comments.build
+
+
   end
 
   # GET /adventures/new
