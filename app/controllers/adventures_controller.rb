@@ -11,16 +11,14 @@ class AdventuresController < ApplicationController
   # GET /adventures/1.json
   def show
     @adventure = Adventure.find(params[:id])
-
     @comments = @adventure.comments.all
     @comment = @adventure.comments.build
-
-
   end
 
   # GET /adventures/new
   def new
     @adventure = Adventure.new
+    @adventure = current_user.adventures.build
   end
 
   # GET /adventures/1/edit
@@ -30,6 +28,7 @@ class AdventuresController < ApplicationController
   # POST /adventures
   # POST /adventures.json
   def create
+    @adventure = current_user.adventures.new(adventure_params)
     @adventure = Adventure.new(adventure_params)
     respond_to do |format|
       if @adventure.save
@@ -74,7 +73,7 @@ class AdventuresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def adventure_params
-      params.require(:adventure).permit(:name, :description, :picture, :location, :visit, :address)
+      params.require(:adventure).permit(:name, :description, :picture, :location, :visit, :address, :user_id)
     end
 
 end

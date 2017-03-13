@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get 'pages/osaka'
   get 'pages/tokyo'
 
-
   root 'adventures#index'
   resources :adventures
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -10,7 +10,7 @@
         <h2><%= @adventure.name %></h2>
         <p><i class="fa fa-map-marker w3-margin-right"></i><%= @adventure.location %></p>
         <p><%= @adventure.description %></p>
-        <p class="w3-opacity"><i class="fa fa-clock-o w3-margin-right"></i>Added by <%= @adventure.user %> on <%= @adventure.visit %></p>
+        <p class="w3-opacity"><i class="fa fa-clock-o w3-margin-right"></i>Added by <%= @adventure.user.username %> on <%= @adventure.visit %></p>
         <p>
           <%= link_to 'Update', edit_adventure_path(@adventure), :class => 'w3-btn w3-red w3-margin-top'  %>
           <%= link_to 'Delete', @adventure, data: { confirm: 'Are you sure?' }, method: :delete, :class => 'w3-btn w3-red w3-margin-top'  %>

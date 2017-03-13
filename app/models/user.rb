@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :adventures
+
   include Gravtastic
   gravtastic
   # Include default devise modules. Others available are:
@@ -21,5 +23,5 @@ class User < ApplicationRecord
       where(conditions.to_hash).first
     end
   end
-has_many :adventures
+
 end
