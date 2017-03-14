@@ -1,6 +1,8 @@
 class AdventuresController < ApplicationController
   before_action :set_adventure, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :owns_adventure, only: [:edit, :update, :destroy]
   # GET /adventures
   # GET /adventures.json
   def index
@@ -76,4 +78,9 @@ class AdventuresController < ApplicationController
       params.require(:adventure).permit(:name, :description, :picture, :location, :visit, :address, :user_id)
     end
 
+    def owns_adventure
+      if !user_signed_in? || current_user != Adventure.find(params[:id]).user
+        redirect_to adventures_path, error: "You cannot do that"
+      end
+    end
 end
