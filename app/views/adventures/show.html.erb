@@ -45,6 +45,7 @@
         <%= @adventure.address %></p>
         <p><b>Latitude and Longitude:</b><br />
         <%= @adventure.latitude %>, <%= @adventure.longitude %></p>
+        <p><a href="http://maps.apple.com/?daddr=<%= @adventure.latitude %>,<%= @adventure.longitude %>&dirflg=d&t=h">Get Driving Directions</a></p>
       </div>
     </div>
   </div>
