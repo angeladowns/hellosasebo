@@ -33,6 +33,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :category %><br />
+    <%= f.collection_select(:category_id, @categories, :id, :name, :include_blank => "Please select") %>
+  </div>
+
+  <div class="field">
     <%= f.label :picture %><br />
     <%= f.file_field :picture %>
   </div>

@@ -3,6 +3,7 @@ class AdventuresController < ApplicationController
 
   before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_filter :owns_adventure, only: [:edit, :update, :destroy]
+  before_filter :prepare_categories
   # GET /adventures
   # GET /adventures.json
   def index
@@ -73,9 +74,14 @@ class AdventuresController < ApplicationController
       @adventure = Adventure.find(params[:id])
     end
 
+    # add the @categories = Category.All to the before action so avail for all actions
+     def prepare_categories
+      @categories = Category.all
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def adventure_params
-      params.require(:adventure).permit(:name, :description, :picture, :location, :visit, :address, :user_id)
+      params.require(:adventure).permit(:name, :description, :picture, :location, :visit, :address, :user_id, :category_id)
     end
 
     def owns_adventure
