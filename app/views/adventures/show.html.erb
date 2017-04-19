@@ -11,6 +11,7 @@
         <p><i class="fa fa-map-marker w3-margin-right"></i><%= @adventure.location %></p>
         <p><%= @adventure.description %></p>
         <p class="w3-opacity"><i class="fa fa-clock-o w3-margin-right"></i>Added by <%= @adventure.user.username %> on <%= @adventure.visit %></p>
+        <p class="w3-opacity"><i class="fa fa-tag w3-margin-right"></i>Filed under: <%= @adventure.category.name %></p>
         <% if user_signed_in? && current_user == @adventure.user %>
         <p>
           <%= link_to 'Update', edit_adventure_path(@adventure), :class => 'w3-btn w3-red w3-margin-top'  %>
