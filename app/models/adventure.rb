@@ -5,4 +5,10 @@ class Adventure < ApplicationRecord
   belongs_to :user
   belongs_to  :category
   mount_uploader :picture, PictureUploader
+
+  def self.search(search)
+  where("name LIKE ? OR location LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+  end
+
+
 end

@@ -52,6 +52,13 @@
       <h3>Today's Faves</h3>
       <p>These are our favorite places. What's yours?</p>
     </div>
+
+    <% if @adventures.blank? %>
+      <div class="w3-row-padding">
+        <h4>There are no adventures containing the term <%= params[:search] %>.</h4>
+      </div>
+    <% end %>
+
     <% @adventures.in_groups_of(2) do |group| %>
     <div class="w3-row-padding">
       <% group.compact.each do |adventure| %>
