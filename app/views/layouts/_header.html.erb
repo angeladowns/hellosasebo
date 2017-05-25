@@ -5,7 +5,7 @@
         <ul class="w3-navbar w3-black">
          <li><a href="javascript:void(0)" class="tablink" onclick="openLink(event, 'Eat');"><i class="fa fa-cutlery w3-margin-right"></i>Eat</a></li>
          <li><a href="javascript:void(0)" class="tablink" onclick="openLink(event, 'Shop');"><i class="fa fa-shopping-bag w3-margin-right"></i>Shop</a></li>
-        <li><a href="javascript:void(0)" class="tablink" onclick="openLink(event, 'See');"><i class="fa fa-camera-retro w3-margin-right"></i>See & Do</a></li>
+        <li><a href="javascript:void(0)" class="tablink" onclick="openLink(event, 'Explore');"><i class="fa fa-camera-retro w3-margin-right"></i>Explore</a></li>
        </ul>
 
        <!-- Tabs -->
@@ -27,7 +27,7 @@
     <% end %>
   </div>
 
-  <div id="See" class="w3-container w3-white w3-padding-16 myLink">
+  <div id="Explore" class="w3-container w3-white w3-padding-16 myLink">
     <h3>Let the adventure begin!</h3>
     <p><span class="w3-tag w3-deep-orange">TICK TOCK!</span> So much to see and do, so little time to do it. Get busy! </p>
     <%= form_tag(adventures_path, :method => "get", id: "search-form") do %>
