@@ -49,7 +49,10 @@
         <%= @adventure.address %></p>
         <p><b>Latitude and Longitude:</b><br />
         <%= @adventure.latitude %>, <%= @adventure.longitude %></p>
-        <p><a href="http://maps.apple.com/?daddr=<%= @adventure.latitude %>,<%= @adventure.longitude %>&dirflg=d&t=m" class="w3-btn w3-red w3-margin-top">Driving with Siri</a></p>
+        <p>
+          <a href="http://maps.apple.com/?daddr=<%= @adventure.latitude %>,<%= @adventure.longitude %>&dirflg=d&t=m" class="w3-btn w3-red w3-margin-top">Driving with Siri</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=<%= @adventure.latitude %>,<%= @adventure.longitude %>&dir_action=navigate" class="w3-btn w3-red w3-margin-top">Driving with Google</a>
+        </p>
       </div>
     </div>
   </div>
