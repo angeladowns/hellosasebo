@@ -1,5 +1,4 @@
 <%= render "layouts/header" %>
-
 <!-- Page content -->
 <div class="w3-content" style="max-width:1100px;">
 
@@ -59,7 +58,7 @@
       </div>
     <% end %>
 
-    <% @adventures.in_groups_of(2) do |group| %>
+    <% @adventures.limit(4).in_groups_of(2) do |group| %>
     <div class="w3-row-padding">
       <% group.compact.each do |adventure| %>
       <div class="w3-half w3-margin-bottom">
