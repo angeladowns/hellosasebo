@@ -62,7 +62,7 @@
     <div class="w3-row-padding">
       <% group.compact.each do |adventure| %>
       <div class="w3-half w3-margin-bottom">
-        <%= image_tag adventure.picture_url, width: '100%' if adventure.picture.present?%>
+        <%= image_tag adventure.picture_url(:thumb), width: '100%' if adventure.picture.present?%>
         <div class="w3-container w3-white">
           <h3><%= adventure.name %></h3>
           <p class="w3-opacity"><%= adventure.location %></p>

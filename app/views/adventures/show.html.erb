@@ -4,7 +4,7 @@
 
     <div class="w3-row-padding">
       <div class="w3-twothird">
-        <%= image_tag(@adventure.picture_url, width: '100%') if @adventure.picture.present? %>
+        <%= image_tag(@adventure.picture_url(:thumb), width: '100%') if @adventure.picture.present? %>
       </div>
       <div class="w3-third">
         <h2><%= @adventure.name %></h2>
