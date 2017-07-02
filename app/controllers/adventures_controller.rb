@@ -9,14 +9,21 @@ class AdventuresController < ApplicationController
   def index
     @adventures = Adventure.all
 
-  if params[:search]
-    @adventures = Adventure.search(params[:search]).order("created_at DESC")
-  else
-    @adventures = Adventure.all.order("created_at DESC")
-  end
+  #if params[:search]
+  #  @adventures = Adventure.search(params[:search]).order("created_at DESC")
+  #else
+  #  @adventures = Adventure.all.order("created_at DESC")
+  #end
 
   end
 
+  def search
+    if params[:search]
+      @adventures = Adventure.search(params[:search]).order("created_at DESC")
+    else
+      @adventures = Adventure.all.order("created_at DESC")
+    end
+  end
 
 
   # GET /adventures/1

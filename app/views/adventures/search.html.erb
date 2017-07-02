@@ -1,0 +1,39 @@
+<div class="w3-content" style="max-width:1100px;">
+
+  <div class="w3-container">
+    <% if @adventures.blank? %>
+        <h3>There are no search results for <%= params[:search] %>.</h3>
+        <p>I know. It blows my mind, too. How is it possible no one has posted about <%= params[:search] %> yet?! Looks like we know what we have to do this weekend!</p>
+        <% else %>
+        <h3>Search Results for <%= params[:search] %></h3>
+    <% end %>
+    </div>
+
+
+
+    <% @adventures.in_groups_of(2) do |group| %>
+    <div class="w3-row-padding">
+      <% group.compact.each do |adventure| %>
+      <div class="w3-half w3-margin-bottom">
+        <%= image_tag adventure.picture_url(:thumb), width: '100%' if adventure.picture.present?%>
+        <div class="w3-container w3-white">
+          <h3><%= adventure.name %></h3>
+          <p class="w3-opacity"><%= adventure.location %></p>
+          <p><%= adventure.description.truncate(236, separator: ' ') %></p>
+          <button class="w3-btn w3-margin-bottom"><%= link_to 'More Info', adventure %></button>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+
+<!-- Newsletter -->
+  <div class="w3-container">
+    <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off">
+      <h2>Get the scoop delivered to your inbox.</h2>
+      <p>Join our newsletter.</p>
+      <label>E-mail</label>
+      <input class="w3-input w3-border" type="text" placeholder="Your Email address">
+      <button type="button" class="w3-btn w3-red w3-margin-top">Subscribe</button>
+    </div>
+  </div>
