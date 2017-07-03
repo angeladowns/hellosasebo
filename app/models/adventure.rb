@@ -7,7 +7,7 @@ class Adventure < ApplicationRecord
   mount_uploader :picture, PictureUploader
 
   def self.search(search)
-  where("name LIKE ? OR location LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+  where("name ILIKE ? OR location ILIKE ? OR description ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
   end
 
 
