@@ -4,14 +4,11 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-    include CarrierWave::MiniMagick
-    version :thumb do
-      process :resize_to_fill => [1734, 975]
-    end
+  include CarrierWave::MiniMagick
 
-  # Choose what kind of storage to use for this uploader:
-  # storage :file
-    storage :fog
+  version :thumb do
+    process :resize_to_fill => [1734, 975]
+  end
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -49,7 +46,7 @@ class PictureUploader < CarrierWave::Uploader::Base
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   # def filename
-  #   "something.jpg" if original_filename
+    # "#{model.class.find(model.id).name.parameterize.underscore}" if original_filename
   # end
 
 end
