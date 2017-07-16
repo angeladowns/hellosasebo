@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'pages/osaka'
   get 'pages/tokyo'
 
+
   root 'adventures#index'
   resources :adventures do
     collection do
