@@ -2,15 +2,7 @@
 <ul class="w3-navbar w3-white w3-border-bottom w3-xlarge">
   <li><a href="/adventures" class="w3-text-red w3-hover-red"><b><i class="fa fa-map-marker w3-margin-right"></i>Hello, Sasebo!</b></a></li>
   <li><a href="/pages/info">About</a></li>
-  <!-- Original Search Icon
-  <li class="w3-right"><a href="#" class="w3-hover-red w3-text-grey"><i class="fa fa-search"></i></a></li>
 
-  <form class="searchbox">
-    <input type="search" placeholder="Search..." name="search" class="searchbox-input" onkeyup="buttonUp();" required>
-    <input type="submit" class="searchbox-submit" value="GO">
-    <span class="searchbox-icon"><i class="fa fa-search"></i></span>
- </form>
-  -->
   <li class="w3-right">
   <%= form_tag(search_adventures_path, :method => "get", id: "nav-search-form", class: "searchbox") do %>
   <%= text_field_tag :search, params[:search], placeholder: "Search...", class: "searchbox-input", name: "search" %>
@@ -28,5 +20,6 @@
   <li class="w3-right"><%= link_to "Login", new_user_session_path %></li>
   <li class="w3-right"><%= link_to "Sign Up", new_user_registration_path %></li>
 <% end %>
+
 
 </ul>

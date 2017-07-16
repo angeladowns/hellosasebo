@@ -11,10 +11,10 @@
        <!-- Tabs -->
   <div id="Eat" class="w3-container w3-white w3-padding-16 myLink">
     <h3>Hungry? Let's fix that!</h3>
-    <p>Sushi. Japanese Curry. Burgers. Steak. So many choices, so little time!</p>
+    <p>Sushi. Curry. Burgers. Steak. So many choices, so little yen!</p>
     <%= form_tag(search_adventures_path, :method => "get", id: "search-form") do %>
     <%= text_field_tag :search, params[:search], placeholder: "ex: Sasebo Burger", class: "w3-input w3-border" %>
-    <p><%= submit_tag "Search Restaurants", :name => nil, class: "w3-btn w3-dark-grey" %></p>
+    <p><%= submit_tag "Search Cafes", :name => nil, class: "w3-btn w3-dark-grey" %></p>
     <% end %>
   </div>
 
@@ -29,7 +29,7 @@
 
   <div id="Explore" class="w3-container w3-white w3-padding-16 myLink">
     <h3>Let the adventure begin!</h3>
-    <p><span class="w3-tag w3-deep-orange">TICK TOCK!</span> So much to see and do, so little time to do it. Get busy! </p>
+    <p>Museums, festivals, and mountains. There is so much to discover in Japan. Let's go!</p>
     <%= form_tag(search_adventures_path, :method => "get", id: "search-form") do %>
     <%= text_field_tag :search, params[:search], placeholder: "ex: Sasebo, Japan", class: "w3-input w3-border" %>
     <p><%= submit_tag "Search Activities", :name => nil, class: "w3-btn w3-dark-grey" %></p>
