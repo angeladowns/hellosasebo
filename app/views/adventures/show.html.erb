@@ -21,13 +21,13 @@
       </div>
     </div>
 
-  <div class="w3-container w3-margin-top">
+  <div class="w3-container w3-margin-top w3-content w3-hide-small">
     <h2>Go. See. Explore!</h2>
   </div>
 
 
   <div class="w3-row-padding">
-    <div class="w3-third">
+    <div class="w3-third w3-content w3-hide-small">
 
       <p>Finding your way around a new city (or country!) can be challenging but so rewarding when you finally find that cat cafe you've been searching for. Here are a few tips for navigating with GPS.<p>
         <h3>Tips for Using GPS</h3>
@@ -42,7 +42,9 @@
     </div>
 
     <div class="w3-twothird">
+      <div class="w3-content w3-hide-small">
       <%= image_tag "http://maps.google.com/maps/api/staticmap?size=600x300&sensor=false&zoom=16&markers=#{@adventure.latitude}%2C#{@adventure.longitude}&key=AIzaSyCRqpdm_roS4fhGyQ6mmE7FN3MnkGghoaA" %>
+     </div>
       <div class="w3-container w3-white">
         <h3>Finding Your Way Here</h3>
         <p><b>Address:</b><br />
