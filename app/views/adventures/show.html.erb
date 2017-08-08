@@ -10,7 +10,7 @@
         <h2><%= @adventure.name %></h2>
         <p><i class="fa fa-map-marker w3-margin-right"></i><%= @adventure.location %></p>
         <p><%= @adventure.description %></p>
-        <p class="w3-opacity"><i class="fa fa-clock-o w3-margin-right"></i>Added by <%= @adventure.user.username %> on <%= @adventure.visit %></p>
+        <p class="w3-opacity"><i class="fa fa-clock-o w3-margin-right"></i>Added by <%= @adventure.user.username %> on <%= @adventure.visit.to_formatted_s(:rfc822)   %></p>
         <p class="w3-opacity"><i class="fa fa-tag w3-margin-right"></i>Filed under: <%= @adventure.category.name %></p>
         <% if user_signed_in? && current_user == @adventure.user %>
         <p>
@@ -21,7 +21,7 @@
       </div>
     </div>
 
-  <div class="w3-container w3-margin-top w3-content w3-hide-small">
+  <div class="w3-container w3-margin-top w3-hide-small">
     <h2>Go. See. Explore!</h2>
   </div>
 
