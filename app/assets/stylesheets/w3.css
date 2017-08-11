@@ -33,7 +33,7 @@ legend{color:inherit;display:table;max-width:100%;padding:0;white-space:normal}t
 .searchbox{
     position:relative;
     min-width:50px;
-    width:0%;
+    width:100%; /* was 0% */
     height:50px;
     float:right;
     overflow:hidden;

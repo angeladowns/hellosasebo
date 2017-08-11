@@ -3,12 +3,7 @@
   <li><a href="/adventures" class="w3-text-red w3-hover-red"><b><i class="fa fa-map-marker w3-margin-right"></i>Hello, Sasebo!</b></a></li>
   <li><a href="/pages/info">About</a></li>
 
-  <li class="w3-right">
-  <%= form_tag(search_adventures_path, :method => "get", id: "nav-search-form", class: "searchbox") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search...", class: "searchbox-input", name: "search" %>
-  <span class="searchbox-icon"><i class="fa fa-search"></i></span>
-    <% end %>
-  </li>
+
 
 <% if user_signed_in? %>
   <li ><%= link_to 'New Adventure', new_adventure_path %></li>
@@ -17,8 +12,15 @@
   <li class="w3-right"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
   <li class="w3-right"><%= link_to 'Edit Profile', edit_user_registration_path %></li>
   <% else %>
-    <li class="w3-right"><%= link_to "Login", new_user_session_path %></li>
+    <li class=""><%= link_to "Login", new_user_session_path %></li>
 <% end %>
+
+<li class="w3-right">
+<%= form_tag(search_adventures_path, :method => "get", id: "nav-search-form", class: "searchbox") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search...", class: "searchbox-input", name: "search" %>
+<span class="searchbox-icon"><i class="fa fa-search"></i></span>
+  <% end %>
+</li>
 
 
 </ul>
