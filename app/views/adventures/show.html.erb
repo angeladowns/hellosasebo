@@ -59,36 +59,7 @@
     </div>
   </div>
 
-<!-- comments
-  <div class="w3-container w3-margin-top">
-  </div>
 
-  <div class="w3-row-padding">
-    <div class="w3-third">
-      <div class="w3-container w3-white">
-        <h3>Have You Been Here?</h3>
-        <p>What did you think? Was it kid- or pet-friendly? Care to share any tips?</p>
-        <%= render 'comments/form' %>
-        <br />
-      </div>
-
-    </div>
-
-
-    <% @comments.in_groups_of(2) do |group| %>
-    <div class="w3-third">
-      <div class="w3-container w3-white">
-        <% group.compact.each do |comment| %>
-          <div>
-           <p><%= comment.body %></p>
-           <p><em>&mdash; <%= comment.user_name %></em></p>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
-  </div>
- comments -->
   <div class="w3-container">
     <%= link_to "Back", :back, :class => 'w3-btn w3-red w3-margin-top' %>
   </div>
