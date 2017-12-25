@@ -15,6 +15,7 @@ class User < ApplicationRecord
   # This is in addition to a real persisted field like 'username'
   attr_accessor :login
 
+
   def self.find_for_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
