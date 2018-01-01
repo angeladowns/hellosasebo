@@ -1,39 +1,39 @@
 <!-- Header -->
-  <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
-    <img class="w3-image" src="https://s3.amazonaws.com/adv-assets/site-images/adventurefish.JPG" alt="Japan" width="1500" height="700">
-      <div class="w3-display-middle" style="width:65%">
-        <ul class="w3-navbar w3-black">
-         <li><a href="javascript:void(0)" class="tablink" onclick="openLink(event, 'Eat');"><i class="fa fa-cutlery w3-margin-right"></i>Eat</a></li>
-         <li><a href="javascript:void(0)" class="tablink" onclick="openLink(event, 'Shop');"><i class="fa fa-shopping-bag w3-margin-right"></i>Shop</a></li>
-        <li><a href="javascript:void(0)" class="tablink" onclick="openLink(event, 'Explore');"><i class="fa fa-camera-retro w3-margin-right"></i>Explore</a></li>
-       </ul>
+<header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+  <img class="w3-image" src="https://s3.amazonaws.com/adv-assets/site-images/adventurefish.JPG" alt="Japan" width="1500" height="700">
+  <div class="w3-display-middle" style="width:65%">
+    <ul class="w3-navbar w3-black">
+      <li><a href="javascript:void(0)" class="tablink" onclick="openLink(event, 'Eat');"><i class="fa fa-cutlery w3-margin-right"></i>Eat</a></li>
+      <li><a href="javascript:void(0)" class="tablink" onclick="openLink(event, 'Shop');"><i class="fa fa-shopping-bag w3-margin-right"></i>Shop</a></li>
+      <li><a href="javascript:void(0)" class="tablink" onclick="openLink(event, 'Explore');"><i class="fa fa-camera-retro w3-margin-right"></i>Explore</a></li>
+    </ul>
 
-       <!-- Tabs -->
-  <div id="Eat" class="w3-container w3-white w3-padding-16 myLink">
-    <h3>Hungry? Let's fix that!</h3>
-    <p>Sushi. Curry. Burgers. Steak. So many choices, so little yen!</p>
-    <%= form_tag(search_adventures_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "ex: Sasebo Burger", class: "w3-input w3-border" %>
-    <p><%= submit_tag "Search Cafes", :name => nil, class: "w3-btn w3-dark-grey" %></p>
-    <% end %>
-  </div>
+    <!-- Tabs -->
+    <div id="Eat" class="w3-container w3-white w3-padding-16 myLink">
+      <h3>Hungry? Let's fix that!</h3>
+      <p>Sushi. Curry. Burgers. Steak. So many choices, so little yen!</p>
+      <%= form_tag(search_adventures_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "ex: Sasebo Burger", class: "w3-input w3-border" %>
+      <p><%= submit_tag "Search Cafes", :name => nil, class: "w3-btn w3-dark-grey" %></p>
+      <% end %>
+    </div>
 
-  <div id="Shop" class="w3-container w3-white w3-padding-16 myLink">
-    <h3>Beetles, bentos, and lucky cats.</h3>
-    <p>Sasebo is full of things you never even knew you needed. Pack up the kids and let's hit the shops!</p>
-    <%= form_tag(search_adventures_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "ex: Yen Stores", class: "w3-input w3-border" %>
-    <p><%= submit_tag "Search Shops", :name => nil, class: "w3-btn w3-dark-grey" %></p>
-    <% end %>
-  </div>
+    <div id="Shop" class="w3-container w3-white w3-padding-16 myLink">
+      <h3>Beetles, bentos, and lucky cats.</h3>
+      <p>Sasebo is full of things you never even knew you needed. Pack up the kids and let's hit the shops!</p>
+      <%= form_tag(search_adventures_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "ex: Yen Stores", class: "w3-input w3-border" %>
+      <p><%= submit_tag "Search Shops", :name => nil, class: "w3-btn w3-dark-grey" %></p>
+      <% end %>
+    </div>
 
-  <div id="Explore" class="w3-container w3-white w3-padding-16 myLink">
-    <h3>Let the adventure begin!</h3>
-    <p>Museums, festivals, and mountains. There is so much to discover in Japan. Let's go!</p>
-    <%= form_tag(search_adventures_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "ex: Sasebo, Japan", class: "w3-input w3-border" %>
-    <p><%= submit_tag "Search Activities", :name => nil, class: "w3-btn w3-dark-grey" %></p>
-    <% end %>
+    <div id="Explore" class="w3-container w3-white w3-padding-16 myLink">
+      <h3>Let the adventure begin!</h3>
+      <p>Museums, festivals, and mountains. There is so much to discover in Japan. Let's go!</p>
+      <%= form_tag(search_adventures_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "ex: Sasebo, Japan", class: "w3-input w3-border" %>
+      <p><%= submit_tag "Search Activities", :name => nil, class: "w3-btn w3-dark-grey" %></p>
+      <% end %>
+    </div>
   </div>
-</div>
 </header>

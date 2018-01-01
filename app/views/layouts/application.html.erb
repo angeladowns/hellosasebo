@@ -9,10 +9,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
-     body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
-     .myLink {display: none}
+      body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+      .myLink {display: none}
     </style>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -25,6 +27,7 @@
 
     </script>
   </head>
+
   <%= render 'application/favicon' %>
 
   <body class="w3-light-grey">
@@ -33,17 +36,19 @@
 
   <%= yield %>
 
-    <!-- Footer -->
-    <footer class="w3-container w3-center w3-opacity w3-margin-bottom">
-      <h5>An "Explore My Town" Project</h5>
-      <div class="w3-xlarge w3-padding-16">
-        <a href="/adventures" target="_top"><i class="fa fa-heart-o w3-hover-text-red"></i></a>
-        <a href="https://www.instagram.com/hellosasebo/" target="_blank"><i class="fa fa-instagram w3-hover-text-purple"></i></a>
-        <a href="https://github.com/angeladowns" target="_blank"><i class="fa fa-github-alt w3-hover-text-indigo"></i></a>
-      </div>
-    </footer>
+  <!-- Footer -->
+  <footer class="w3-container w3-center w3-opacity w3-margin-bottom">
+    <h5>An "Explore My Town" Project</h5>
+    <div class="w3-xlarge w3-padding-16">
+      <a href="/pages/info" target="_self"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+      <a href="/adventures" target="_top"><i class="fa fa-heart-o w3-hover-text-red"></i></a>
+      <a href="http://wwww.exploremytown.com" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+      <a href="https://www.instagram.com/hellosasebo/" target="_blank"><i class="fa fa-instagram w3-hover-text-purple"></i></a>
+      <a href="https://github.com/angeladowns" target="_blank"><i class="fa fa-github-alt w3-hover-text-indigo"></i></a>
+    </div>
+  </footer>
 
-    <script>
+  <script>
 // Tabs
 function openLink(evt, linkName) {
   var i, x, tablinks;
@@ -60,10 +65,10 @@ function openLink(evt, linkName) {
 }
 // Click on the first tablink on load
 document.getElementsByClassName("tablink")[0].click();
-</script>
+  </script>
 
 
-<script>
+  <script>
 // Search
 $(document).ready(function(){
           var submitIcon = $('.searchbox-icon');
@@ -104,6 +109,6 @@ $(document).ready(function(){
                   $('.searchbox-icon').css('display','block');
               }
           }
-          </script>
+  </script>
   </body>
 </html>
