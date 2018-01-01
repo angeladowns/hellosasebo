@@ -1,5 +1,3 @@
-<div class="w3-container">
-
 <% if user_signed_in? %>
 
 <%= form_for(adventure) do |f| %>
@@ -62,4 +60,3 @@
 <% else %>
 <p>You must <%= link_to "Sign Up", new_user_registration_path %> or <%= link_to "Login", new_user_session_path %> to contribute.</p>
 <% end %>
-  </div>

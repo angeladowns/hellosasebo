@@ -5,6 +5,8 @@
 
   <div class="w3-container">
     <%= render 'form', adventure: @adventure %>
-    <p><%= link_to 'Cancel', @adventure %></p>
+  </div>
+  <div class="w3-container">
+    <%= link_to 'Cancel', @adventure, :class => 'w3-btn w3-black w3-margin-top' %>
   </div>
 </div>
