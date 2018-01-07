@@ -11,5 +11,14 @@ ActiveAdmin.register Adventure do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+  permit_params :name, :description, :picture, :location, :visit, :address, :user_id, :category_id, :User
+
+  index do
+    column :name
+    column :location
+    column :user
+    column :category
+    actions
+  end
 
 end
