@@ -22,11 +22,21 @@ ActiveAdmin.register_page "Dashboard" do
          end
        end
 
-       column do
-         panel "Info" do
-           para "Welcome to ActiveAdmin."
+         column do
+           panel "Contributors" do
+             ul do
+               User.all.map do |user|
+                 li link_to(user.username, admin_user_path(user))
+               end
+             end
+           end
          end
-       end
+
+      # column do
+      #   panel "Info" do
+      #     para "Welcome to ActiveAdmin."
+      #   end
+      # end
      end
   end # content
 end
