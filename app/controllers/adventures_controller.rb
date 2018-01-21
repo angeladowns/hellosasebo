@@ -7,7 +7,7 @@ class AdventuresController < ApplicationController
   # GET /adventures
   # GET /adventures.json
   def index
-    @adventures = Adventure.all.order("created_at DESC")
+    @adventures = Adventure.all.order("updated_at DESC")
 
   #if params[:search]
   #  @adventures = Adventure.search(params[:search]).order("created_at DESC")
