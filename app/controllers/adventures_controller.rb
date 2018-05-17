@@ -1,9 +1,9 @@
 class AdventuresController < ApplicationController
   before_action :set_adventure, only: [:show, :edit, :update, :destroy]
 
-  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_filter :owns_adventure, only: [:edit, :update, :destroy]
-  before_filter :prepare_categories
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :owns_adventure, only: [:edit, :update, :destroy]
+  before_action :prepare_categories
   # GET /adventures
   # GET /adventures.json
   def index
