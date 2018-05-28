@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/activeadmin/activeadmin.git
-  revision: 1ae7e885de72ae15962a4b738e11d469423541c5
+  remote: https://github.com/activeadmin/activeadmin.git
+  revision: 5d2b5b08e7404af056275cdeb746dd1584871ea1
   specs:
     activeadmin (2.0.0.alpha)
       arbre (>= 1.1.1)
@@ -16,7 +16,7 @@ GIT
       sprockets-es6 (>= 0.9.2)
 
 GIT
-  remote: git://github.com/activeadmin/inherited_resources.git
+  remote: https://github.com/activeadmin/inherited_resources.git
   revision: 652686148f554fb9ce0ebee5d857b3d3decc0272
   specs:
     inherited_resources (1.8.0)
@@ -348,4 +348,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.13.6
+   1.16.2
