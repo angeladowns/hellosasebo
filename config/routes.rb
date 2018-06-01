@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  get 'contact/new'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :categories
   devise_for :users
   resources :comments
+  resources :contacts, only: [:new, :create]
   get 'pages/info'
   get 'pages/sasebo'
   get 'pages/fukuoka'
