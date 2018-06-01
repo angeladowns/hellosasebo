@@ -9,11 +9,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :comments
   get 'pages/info'
-  get 'pages/sasebo'
-  get 'pages/fukuoka'
-  get 'pages/nagasaki'
-  get 'pages/osaka'
-  get 'pages/tokyo'
+
 
 
 
