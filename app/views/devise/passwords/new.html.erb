@@ -9,7 +9,7 @@
 
     <div class="field">
       <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
+      <%= f.email_field :email, autofocus: true, class: 'w3-input w3-border' %>
     </div>
 
     <div class="actions">
@@ -17,6 +17,7 @@
     </div>
     <% end %>
 
-    <%= render "devise/shared/links" %>
+    <%= link_to "Back", :back, :class => 'w3-btn w3-black w3-margin-top' %>
+
   </div>
 </div>

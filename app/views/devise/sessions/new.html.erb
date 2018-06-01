@@ -1,18 +1,18 @@
 <div class="w3-content" style="max-width:1100px;">
   <div class="w3-container w3-margin-top">
-    <h1>Log in</h1>
+    <h1>Login</h1>
   </div>
 
   <div class="w3-container">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
       <%= f.label :login %><br />
-      <%= f.text_field :login %>
+      <%= f.text_field :login, class: 'w3-input w3-border' %>
     </div>
 
     <div class="field">
       <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
+      <%= f.password_field :password, autocomplete: "off", class: 'w3-input w3-border' %>
     </div>
 
     <% if devise_mapping.rememberable? -%>
