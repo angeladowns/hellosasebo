@@ -63,7 +63,7 @@ Rails.application.configure do
 
   # SendGrid Contact Form from https://www.codementor.io/simi736/send-email-using-mailform-gem-and-sendgrid-on-heroku-using-rails-5-eyy4zuwnl
   config.action_mailer.default_url_options = {
-    host: 'https://japanadventure.herokuapps.com'
+    host: 'https://japanadventure.herokuapp.com'
   }
   config.action_mailer.delivery_method = :smtp
 

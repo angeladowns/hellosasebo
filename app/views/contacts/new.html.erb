@@ -1,0 +1,40 @@
+<div class="w3-content" style="max-width:1100px;">
+  <div class="w3-container w3-margin-top">
+    <h1>Send a Message</h1>
+    <p>We love hearing from our friends and neighbors!</p>
+    <i class="fa fa-user" style="width:30px"></i> Angela Downs<br>
+    <i class="fa fa-map-marker" style="width:30px"></i> Washington, D.C. USA<br>
+    <i class="fa fa-envelope" style="width:30px"></i> angela@hellodiplomat.com<br>
+
+    <%= form_for @contact do |f| %>
+    <% if flash[:error].present? %>
+        <p> flash[:error]</p>
+    <% end %>
+
+    <div class="field">
+    <%= f.label :name %> <br>
+    <%= f.text_field :name, required: true, class: 'w3-input w3-border' %>
+    </div>
+
+    <div class="field">
+    <%= f.label :email %> <br>
+    <%= f.text_field :email, required: true, class: 'w3-input w3-border' %>
+    </div>
+
+    <div class="field">
+    <%= f.label :message %> <br>
+    <%= f.text_area :message, as: :text, class: 'w3-input w3-border' %>
+    </div>
+<!--
+    <div class="hidden">
+    <%= f.label :nickname %> <br>
+    <%= f.text_field :nickname, hint: 'leave this field blank' %>
+    </div>
+-->
+
+    <div class="actions">
+    <%= f.submit 'Send Message', class: "w3-btn w3-red w3-margin-top" %>
+    </div>
+  <% end %>
+  </div>
+  </div>
