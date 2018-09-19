@@ -10,8 +10,7 @@
         <h2><%= @adventure.name %></h2>
         <p><i class="fa fa-map-marker w3-margin-right"></i><%= @adventure.location %></p>
         <p><%= @adventure.description %></p>
-        <p class="w3-opacity"><i class="fa fa-clock-o w3-margin-right"></i>Added by <%= @adventure.user.username %> on <%= @adventure.visit.to_formatted_s(:rfc822)   %></p>
-        <p class="w3-opacity"><i class="fa fa-tag w3-margin-right"></i>Filed under: <%= @adventure.category.name %></p>
+
         <% if user_signed_in? && current_user == @adventure.user %>
         <p>
           <%= link_to 'Update', edit_adventure_path(@adventure), :class => 'w3-btn w3-red w3-margin-top'  %>
@@ -22,38 +21,28 @@
     </div>
 
   <div class="w3-container w3-margin-top w3-hide-small">
-    <h2>Go. See. Explore!</h2>
+    <h2>Details & Directions</h2>
   </div>
 
 
   <div class="w3-row-padding">
     <div class="w3-third w3-content w3-hide-small">
-
-      <p>Finding your way around a new city (or country!) can be challenging but so rewarding when you finally find that cat cafe you've been searching for. Here are a few tips for navigating with GPS.<p>
-        <h3>Tips for Using GPS</h3>
-        <ol>
-          <li>Set your GPS before you leave.</li>
-          <li>Make sure you also set your return destination.</li>
-          <li>If you're using your smartphone, mount it at eye-level so you aren't looking away from the road.</li>
-          <li>Expect hiccups. Siri gets confused sometimes, just like us.</li>
-          <li>Try not to get discouraged if you make a wrong turn or miss your exit. Detours are opportunities to discover new things!</li>
-        </ol>
+      <p><i class="fa fa-map-marker w3-margin-right"></i>Located in <%= @adventure.location %></br>
+        <i class="fa fa-user w3-margin-right"></i>Added by <%= @adventure.user.username %></br>
+      <i class="fa fa-clock-o w3-margin-right"></i>Explored on <%= @adventure.visit.to_formatted_s(:rfc822)   %></br>
+      <i class="fa fa-tag w3-margin-right"></i>Filed under "<%= @adventure.category.name %>"</p>
 
     </div>
 
     <div class="w3-twothird">
-      <div class="w3-content w3-hide-small">
-      <%= image_tag "http://maps.google.com/maps/api/staticmap?size=600x300&sensor=false&zoom=16&markers=#{@adventure.latitude}%2C#{@adventure.longitude}&key=AIzaSyCRqpdm_roS4fhGyQ6mmE7FN3MnkGghoaA" %>
-     </div>
       <div class="w3-container w3-white">
-        <h3>Finding Your Way Here</h3>
-        <p><b>Address:</b><br />
+        <p><b>Street Address</b><br />
         <%= @adventure.address %></p>
-        <p><b>Latitude and Longitude:</b><br />
+        <p><b>Latitude and Longitude</b><br />
         <%= @adventure.latitude %>, <%= @adventure.longitude %></p>
         <p>
-          <a href="http://maps.apple.com/?daddr=<%= @adventure.latitude %>,<%= @adventure.longitude %>&dirflg=d&t=m" class="w3-btn w3-red w3-margin-top">Driving with Siri</a>
-          <a href="https://www.google.com/maps/dir/?api=1&destination=<%= @adventure.latitude %>,<%= @adventure.longitude %>&dir_action=navigate" class="w3-btn w3-red w3-margin-top">Driving with Google</a>
+          <a href="http://maps.apple.com/?daddr=<%= @adventure.latitude %>,<%= @adventure.longitude %>&dirflg=d&t=m" class="w3-btn w3-red w3-margin-top">Apple Maps</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=<%= @adventure.latitude %>,<%= @adventure.longitude %>&dir_action=navigate" class="w3-btn w3-red w3-margin-top">Google Maps</a>
         </p>
       </div>
     </div>
