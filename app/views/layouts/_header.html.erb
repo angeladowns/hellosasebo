@@ -14,7 +14,7 @@
       <p>Sushi. Curry. Burgers. Steak. So many choices, so little yen!</p>
       <%= form_tag(search_adventures_path, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "ex: Sasebo Burger", class: "w3-input w3-border" %>
-      <p><%= submit_tag "Search Cafes", :name => nil, class: "w3-btn w3-dark-grey" %></p>
+      <p><%= submit_tag "Search", :name => nil, class: "w3-btn w3-dark-grey" %></p>
       <% end %>
     </div>
 
@@ -23,7 +23,7 @@
       <p>Sasebo is full of things you never even knew you needed. Pack up the kids and let's hit the shops!</p>
       <%= form_tag(search_adventures_path, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "ex: Yen Stores", class: "w3-input w3-border" %>
-      <p><%= submit_tag "Search Shops", :name => nil, class: "w3-btn w3-dark-grey" %></p>
+      <p><%= submit_tag "Search", :name => nil, class: "w3-btn w3-dark-grey" %></p>
       <% end %>
     </div>
 
@@ -32,7 +32,7 @@
       <p>Museums, festivals, and mountains. There is so much to discover in Japan. Let's go!</p>
       <%= form_tag(search_adventures_path, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "ex: Sasebo, Japan", class: "w3-input w3-border" %>
-      <p><%= submit_tag "Search Activities", :name => nil, class: "w3-btn w3-dark-grey" %></p>
+      <p><%= submit_tag "Search", :name => nil, class: "w3-btn w3-dark-grey" %></p>
       <% end %>
     </div>
   </div>
