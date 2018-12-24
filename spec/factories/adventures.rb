@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :adventure do
     date_time { Date.today.strftime("%A, %B %d %I:%M %P") }
     activity { FFaker::Sport.name }
