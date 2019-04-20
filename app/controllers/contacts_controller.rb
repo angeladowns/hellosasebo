@@ -13,7 +13,7 @@ class ContactsController < ApplicationController
       redirect_to :back
     else
       flash.now[:error] = 'Oops! Something went wrong. Please try again.'
-      render :new
+      format.html { render :new }
     end
   end
 end
