@@ -20,6 +20,8 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'invisible_captcha'
+
 gem 'carrierwave'
 gem 'mini_magick', '3.8.0'
 
