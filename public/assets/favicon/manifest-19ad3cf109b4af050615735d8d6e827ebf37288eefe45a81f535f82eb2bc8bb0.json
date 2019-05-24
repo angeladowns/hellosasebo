@@ -1,0 +1,18 @@
+{
+    "name": "Hello, Sasebo!",
+    "icons": [
+        {
+            "src": "/assets/favicon/android-chrome-192x192-a63c8508fb72a2bcf41866dfbd8aaf62aa3b1c3cc9d249c66aaf94b9d6830982.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/favicon/android-chrome-512x512-37d3f97d96c9ad1f0a3725074d6461a14c5bcb711775d0212063b9dd56abba8e.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}
