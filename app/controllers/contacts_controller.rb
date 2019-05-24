@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-  invisible_captcha only: [:contact]
+    invisible_captcha only: [:create, :update], honeypot: :subtitle
 
   def new
     @contact = Contact.new
@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
     @contact.request = request
     if @contact.deliver
       flash[:notice] = 'Thank you for your message!'
-      redirect_to :back
+      redirect_back fallback_location: root_path
     else
       flash.now[:error] = 'Oops! Something went wrong. Please try again.'
       format.html { render :new }
