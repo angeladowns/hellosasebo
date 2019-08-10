@@ -1,7 +1,7 @@
 # Hello, Sasebo!
 January 2017
 
-Ruby 2.3.1 // Rails 5.0.0.1
+Ruby 2.6.3 // Rails 5.0.0.1
 
 http://www.hellosasebo.com/
 
