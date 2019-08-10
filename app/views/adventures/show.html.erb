@@ -35,6 +35,9 @@
     </div>
 
     <div class="w3-twothird">
+        <div class="w3-content w3-hide-small">
+	      <%= image_tag "http://maps.google.com/maps/api/staticmap?size=600x300&sensor=false&zoom=16&markers=#{@adventure.latitude}%2C#{@adventure.longitude}&key=AIzaSyCRqpdm_roS4fhGyQ6mmE7FN3MnkGghoaA" %>
+	     </div>
       <div class="w3-container w3-white">
         <p><b>Street Address</b><br />
         <%= @adventure.address %></p>
