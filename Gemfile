@@ -23,7 +23,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'invisible_captcha'
 
 gem 'carrierwave'
-gem 'mini_magick', '3.8.0'
+gem "mini_magick", ">= 4.9.4"
+
 
 gem 'fog-aws'
 gem 'figaro'
