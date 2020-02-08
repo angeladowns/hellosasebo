@@ -32,7 +32,7 @@ gem 'figaro'
 gem 'geocoder'
 gem 'gmaps4rails'
 
-gem "devise", ">= 4.6.0"
+gem "devise", ">= 4.7.1"
 gem 'gravtastic'
 
 gem 'activeadmin', github: 'activeadmin'
